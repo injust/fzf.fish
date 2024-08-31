@@ -19,6 +19,6 @@ set -xa FZF_DEFAULT_OPTS "--filter=git"
 set actual (_fzf_search_history)
 # for some reason, \n don't appear in what is passed to commandline --replace --, and it's in reverse order
 set expected "git pull git status git log"
-@test "ouputs selected commands without timestamps" "$actual" = "$expected"
+@test "outputs selected commands without timestamps" "$actual" = "$expected"
 
 rm $history_file_path
