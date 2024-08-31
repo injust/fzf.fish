@@ -17,7 +17,7 @@ printf "%s" "- cmd: z fzf
 
 mock commandline "--replace --" "echo \$argv"
 mock commandline \* ""
-set --export --append FZF_DEFAULT_OPTS "--filter=function"
+set -xa FZF_DEFAULT_OPTS "--filter=function"
 
 set actual (_fzf_search_history)
 # for some reason, \n doesn't appear in what is passed to commandline --replace --

@@ -23,7 +23,7 @@ _fzf_uninstall_bindings
 
 # intentionally test both style of passing options with no value
 fzf_configure_bindings --directory --git_status=
-@test "can erase bindings by passing no key sequence" -z (bind --user | string match --entire --regex '_fzf_search_directory|_fzf_search_git_status')
+@test "can erase bindings by passing no key sequence" -z (bind --user | string match -r --entire '_fzf_search_directory|_fzf_search_git_status')
 binding_contains_func ctrl-alt-l _fzf_search_git_log && binding_contains_func ctrl-r _fzf_search_history && binding_contains_func ctrl-v $_fzf_search_vars_command
 @test "installs default bindings that aren't customized" $status -eq 0
 

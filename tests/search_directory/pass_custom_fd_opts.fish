@@ -1,4 +1,4 @@
-set --export searched_hidden false
+set -x searched_hidden false
 function fzf
     while read line
         # use --entire because $line contains ANSI escape codes added by fd

@@ -5,7 +5,7 @@ function _fzf_search_variables --argument-names set_show_output set_names_output
     if test -z "$set_names_output"
         printf '%s\n' '_fzf_search_variables requires 2 arguments.' >&2
 
-        commandline --function repaint
+        commandline -f repaint
         return 22 # 22 means invalid argument in POSIX
     end
 
@@ -35,7 +35,7 @@ function _fzf_search_variables --argument-names set_show_output set_names_output
         # replacing the current token with the selected variable.
         # Uses brace expansion to prepend $ to each variable name.
         commandline --current-token --replace (
-            if string match --quiet -- '$*' $current_token
+            if string match -q -- '$*' $current_token
                 string join " " \${$variable_names_selected}
             else
                 string join " " $variable_names_selected
@@ -43,5 +43,5 @@ function _fzf_search_variables --argument-names set_show_output set_names_output
         )
     end
 
-    commandline --function repaint
+    commandline -f repaint
 end
