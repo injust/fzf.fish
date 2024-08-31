@@ -18,7 +18,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 📁 Search Directory
 
-![Search Directory example](../assets/directory.png)
+![Search Directory example](https://github.com/patrickf1/fzf.fish/blob/assets/directory.png)
 
 - **Fzf input:** recursive listing of current directory's non-hidden files
 - **Output:** relative paths of selected files
@@ -31,7 +31,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 🪵 Search Git Log
 
-![Search Git Log example](../assets/git_log.png)
+![Search Git Log example](https://github.com/patrickf1/fzf.fish/blob/assets/git_log.png)
 
 - **Fzf input:** the current repository's formatted `git log`
 - **Output:** hashes of selected commits
@@ -40,7 +40,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 📝 Search Git Status
 
-![Search Git Status example](../assets/git_status.png)
+![Search Git Status example](https://github.com/patrickf1/fzf.fish/blob/assets/git_status.png)
 
 - **Fzf input:** the current repository's `git status`
 - **Output:** relative paths of selected lines
@@ -49,7 +49,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 📜 Search History
 
-![Search History example](../assets/history.png)
+![Search History example](https://github.com/patrickf1/fzf.fish/blob/assets/history.png)
 
 - **Fzf input:** Fish's command history
 - **Output:** selected commands
@@ -58,7 +58,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 🖥️ Search Processes
 
-![Search Processes example](../assets/processes.png)
+![Search Processes example](https://github.com/patrickf1/fzf.fish/blob/assets/processes.png)
 
 - **Fzf input:** the pid and command of all running processes, outputted by `ps`
 - **Output:** pids of selected processes
@@ -67,7 +67,7 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ### 💲 Search Variables
 
-![Search Variables example](../assets/variables.png)
+![Search Variables example](https://github.com/patrickf1/fzf.fish/blob/assets/variables.png)
 
 - **Fzf input:** all the shell variables currently [in scope][var scope]
 - **Output:** selected shell variables
