@@ -3,7 +3,7 @@ function _fzf_search_git_status --description "Search the output of git status. 
         echo '_fzf_search_git_status: Not in a git repository.' >&2
     else
         set -f preview_cmd '_fzf_preview_changed_file {}'
-        if set --query fzf_diff_highlighter
+        if set -q fzf_diff_highlighter
             set preview_cmd "$preview_cmd | $fzf_diff_highlighter"
         end
 
@@ -27,9 +27,9 @@ function _fzf_search_git_status --description "Search the output of git status. 
                 if test (string sub --length 1 $path) = R
                     # path has been renamed and looks like "R LICENSE -> LICENSE.md"
                     # extract the path to use from after the arrow
-                    set --append cleaned_paths (string split -- "-> " $path)[-1]
+                    set -a cleaned_paths (string split -- "-> " $path)[-1]
                 else
-                    set --append cleaned_paths (string sub --start=4 $path)
+                    set -a cleaned_paths (string sub --start=4 $path)
                 end
             end
 
