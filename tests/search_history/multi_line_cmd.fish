@@ -22,6 +22,6 @@ set -xa FZF_DEFAULT_OPTS "--filter=function"
 set actual (_fzf_search_history)
 # for some reason, \n doesn't appear in what is passed to commandline --replace --
 set expected "function select_me echo I\'m just testing end"
-@test "ouputs right command" "$actual" = "$expected"
+@test "outputs right command" "$actual" = "$expected"
 
 rm $history_file_path
