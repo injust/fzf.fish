@@ -5,7 +5,7 @@ function _fzf_search_history --description "Search command history. Replace the 
         builtin history merge
     end
 
-    if not set --query fzf_history_time_format
+    if not set -q fzf_history_time_format
         # Reference https://devhints.io/strftime to understand strftime format symbols
         set -f fzf_history_time_format "%m-%d %H:%M:%S"
     end
@@ -23,12 +23,12 @@ function _fzf_search_history --description "Search command history. Replace the 
             --scheme=history \
             --prompt="History> " \
             --query=(commandline) \
-            --preview="string replace --regex '$time_prefix_regex' '' -- {} | fish_indent --ansi" \
+            --preview="string replace -r '$time_prefix_regex' '' -- {} | fish_indent --ansi" \
             --preview-window="bottom:3:wrap" \
             $fzf_history_opts |
         string split0 |
         # remove timestamps from commands selected
-        string replace --regex $time_prefix_regex ''
+        string replace -r $time_prefix_regex ''
     )
 
     if test $status -eq 0

@@ -35,7 +35,7 @@ function _fzf_search_variables --argument-names set_show_output set_names_output
         # replacing the current token with the selected variable.
         # Uses brace expansion to prepend $ to each variable name.
         commandline --current-token --replace (
-            if string match --quiet -- '$*' $current_token
+            if string match -q -- '$*' $current_token
                 string join " " \${$variable_names_selected}
             else
                 string join " " $variable_names_selected
