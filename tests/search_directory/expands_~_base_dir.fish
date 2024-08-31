@@ -1,4 +1,4 @@
-set --export --append FZF_DEFAULT_OPTS "--filter=''" # automatically select all input lines sent to fzf
+set -xa FZF_DEFAULT_OPTS "--filter=''" # automatically select all input lines sent to fzf
 set temp_dir temp_test_99
 
 # escape tilde so it doesn't get expanded when echoed

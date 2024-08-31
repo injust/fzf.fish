@@ -5,7 +5,7 @@ printf "%s" "- cmd: echo 'lots of │ chars
 
 mock commandline "--replace --" "echo \$argv"
 mock commandline \* ""
-set --export --append FZF_DEFAULT_OPTS --select-1
+set -xa FZF_DEFAULT_OPTS --select-1
 
 set actual (_fzf_search_history)
 set expected "echo 'lots of │ chars"

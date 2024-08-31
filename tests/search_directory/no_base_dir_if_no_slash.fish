@@ -4,7 +4,7 @@ mock commandline --current-token "echo conf.d"
 mock commandline "--current-token --replace" ""
 mock commandline \* ""
 
-set --export searched_functions_dir false
+set -x searched_functions_dir false
 function fzf
     while read line
         # use --entire because $line contains ANSI escape codes added by fd

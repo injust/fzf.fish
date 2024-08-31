@@ -5,7 +5,7 @@ function _fzf_search_history --description "Search command history. Replace the 
         builtin history merge
     end
 
-    if not set --query fzf_history_time_format
+    if not set -q fzf_history_time_format
         # Reference https://devhints.io/strftime to understand strftime format symbols
         set -f fzf_history_time_format "%m-%d %H:%M:%S"
     end
