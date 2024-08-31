@@ -95,7 +95,7 @@ Finally, install this plugin with [Fisher][].
 > `fzf.fish` can be installed manually or with other plugin managers but only Fisher is officially supported.
 
 ```fish
-fisher install PatrickF1/fzf.fish
+fisher install injust/fzf.fish
 ```
 
 ## Configuration
