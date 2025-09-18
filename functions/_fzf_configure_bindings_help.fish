@@ -31,11 +31,11 @@ DESCRIPTION
 
 EXAMPLES
     Default bindings but bind Search Directory to Ctrl+F and Search Variables to Ctrl+Alt+V
-        \$ fzf_configure_bindings --directory=\cf --variables=\e\cv
+        \$ fzf_configure_bindings --directory=ctrl-f --variables=ctrl-alt-v
     Default bindings but disable Search History
         \$ fzf_configure_bindings --history=
     An agglomeration of different options
-        \$ fzf_configure_bindings --git_status=\cg --history=\ch --variables= --processes=
+        \$ fzf_configure_bindings --git_status=ctrl-g --history=ctrl-h --variables= --processes=
 
 SEE Also
     To learn more about fish key bindings, see bind(1) and fish_key_reader(1).
