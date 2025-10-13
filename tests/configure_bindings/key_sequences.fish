@@ -8,7 +8,7 @@ end
 @test "default binding for history works" (binding_contains_func ctrl-r _fzf_search_history) $status -eq 0
 @test "default binding for variables works" (binding_contains_func ctrl-v $_fzf_search_vars_command) $status -eq 0
 
-fzf_configure_bindings --directory=ctrl-a --git_log=ctrl-b --git_status=ctrl-c --history=ctrl-d --variables=ctrl-e
+fzf_configure_bindings --directory=ctrl-a --git-log=ctrl-b --git-status=ctrl-c --history=ctrl-d --variables=ctrl-e
 @test "can override the default binding for directory" (binding_contains_func ctrl-a _fzf_search_directory) $status -eq 0
 @test "can override the default binding for git log" (binding_contains_func ctrl-b _fzf_search_git_log) $status -eq 0
 @test "can override the default binding for git status" (binding_contains_func ctrl-c _fzf_search_git_status) $status -eq 0
@@ -22,7 +22,7 @@ _fzf_uninstall_bindings
 @test "custom key sequences are properly erased on uninstalling bindings" -z (bind --user | string match --entire _fzf_)
 
 # intentionally test both style of passing options with no value
-fzf_configure_bindings --directory --git_status=
+fzf_configure_bindings --directory --git-status=
 @test "can erase bindings by passing no key sequence" -z (bind --user | string match -r --entire '_fzf_search_directory|_fzf_search_git_status')
 binding_contains_func ctrl-alt-l _fzf_search_git_log && binding_contains_func ctrl-r _fzf_search_history && binding_contains_func ctrl-v $_fzf_search_vars_command
 @test "installs default bindings that aren't customized" $status -eq 0
