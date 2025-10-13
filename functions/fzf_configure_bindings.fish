@@ -4,7 +4,7 @@ function fzf_configure_bindings --description "Installs the default key bindings
     # no need to install bindings if not in interactive mode or running tests
     status is-interactive || test "$CI" = true; or return
 
-    set -f options_spec h/help 'directory=?' 'git_log=?' 'git_status=?' 'history=?' 'processes=?' 'variables=?'
+    set -f options_spec h/help 'directory=?' 'git-log=?' 'git-status=?' 'history=?' 'processes=?' 'variables=?'
     argparse --max-args=0 --ignore-unknown $options_spec -- $argv 2>/dev/null
     if test $status -ne 0
         echo "Invalid option or a positional argument was provided." >&2
