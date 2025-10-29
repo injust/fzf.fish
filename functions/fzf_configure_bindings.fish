@@ -1,6 +1,6 @@
 # Always installs bindings for insert and default mode for simplicity and b/c it has almost no side-effect
 # https://gitter.im/fish-shell/fish-shell?at=60a55915ee77a74d685fa6b1
-function fzf_configure_bindings --description "Installs the default key bindings for fzf.fish with user overrides passed as options."
+function fzf_configure_bindings --description="Installs the default key bindings for fzf.fish with user overrides passed as options."
     # no need to install bindings if not in interactive mode or running tests
     status is-interactive || test "$CI" = true; or return
 
@@ -30,17 +30,17 @@ function fzf_configure_bindings --description "Installs the default key bindings
         end
 
         for mode in default insert
-            test -n $key_sequences[1] && bind --mode $mode $key_sequences[1] _fzf_search_directory
-            test -n $key_sequences[2] && bind --mode $mode $key_sequences[2] _fzf_search_git_log
-            test -n $key_sequences[3] && bind --mode $mode $key_sequences[3] _fzf_search_git_status
-            test -n $key_sequences[4] && bind --mode $mode $key_sequences[4] _fzf_search_history
-            test -n $key_sequences[5] && bind --mode $mode $key_sequences[5] _fzf_search_processes
-            test -n $key_sequences[6] && bind --mode $mode $key_sequences[6] "$_fzf_search_vars_command"
+            test -n $key_sequences[1] && bind --mode=$mode $key_sequences[1] _fzf_search_directory
+            test -n $key_sequences[2] && bind --mode=$mode $key_sequences[2] _fzf_search_git_log
+            test -n $key_sequences[3] && bind --mode=$mode $key_sequences[3] _fzf_search_git_status
+            test -n $key_sequences[4] && bind --mode=$mode $key_sequences[4] _fzf_search_history
+            test -n $key_sequences[5] && bind --mode=$mode $key_sequences[5] _fzf_search_processes
+            test -n $key_sequences[6] && bind --mode=$mode $key_sequences[6] "$_fzf_search_vars_command"
         end
 
-        function _fzf_uninstall_bindings --inherit-variable key_sequences
+        function _fzf_uninstall_bindings --inherit-variable=key_sequences
             bind -e -- $key_sequences
-            bind -e --mode insert -- $key_sequences
+            bind -e --mode=insert -- $key_sequences
         end
     end
 end

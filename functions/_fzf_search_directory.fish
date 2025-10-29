@@ -1,4 +1,4 @@
-function _fzf_search_directory --description "Search the current directory. Replace the current token with the selected file paths."
+function _fzf_search_directory --description="Search the current directory. Replace the current token with the selected file paths."
     # Directly use fd binary to avoid output buffering delay caused by a fd alias, if any.
     # Debian-based distros install fd as fdfind and the fd package is something else, so
     # check for fdfind first. Fall back to "fd" for a clear error message.

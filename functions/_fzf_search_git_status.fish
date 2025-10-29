@@ -1,4 +1,4 @@
-function _fzf_search_git_status --description "Search the output of git status. Replace the current token with the selected file paths."
+function _fzf_search_git_status --description="Search the output of git status. Replace the current token with the selected file paths."
     if not git rev-parse --git-dir >/dev/null 2>&1
         echo '_fzf_search_git_status: Not in a git repository.' >&2
     else
@@ -24,7 +24,7 @@ function _fzf_search_git_status --description "Search the output of git status. 
             set -f cleaned_paths
 
             for path in $selected_paths
-                if test (string sub --length 1 $path) = R
+                if test (string sub --length=1 $path) = R
                     # path has been renamed and looks like "R LICENSE -> LICENSE.md"
                     # extract the path to use from after the arrow
                     set -a cleaned_paths (string split -- "-> " $path)[-1]

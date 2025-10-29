@@ -1,4 +1,4 @@
-function _fzf_search_history --description "Search command history. Replace the command line with the selected command."
+function _fzf_search_history --description="Search command history. Replace the command line with the selected command."
     # history merge incorporates history changes from other fish sessions
     # it errors out if called in private mode
     if test -z "$fish_private_mode"
