@@ -1,5 +1,5 @@
 # helper function for _fzf_search_directory and _fzf_search_git_status
-function _fzf_preview_file --description "Print a preview for the given file based on its file type."
+function _fzf_preview_file --description="Print a preview for the given file based on its file type."
     # because there's no way to guarantee that _fzf_search_directory passes the path to _fzf_preview_file
     # as one argument, we collect all the arguments into one single variable and treat that as the path
     set -f file_path $argv
