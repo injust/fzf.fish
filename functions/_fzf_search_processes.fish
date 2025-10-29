@@ -1,4 +1,4 @@
-function _fzf_search_processes --description "Search all running processes. Replace the current token with the pid of the selected process."
+function _fzf_search_processes --description="Search all running processes. Replace the current token with the pid of the selected process."
     # Directly use ps command because it is often aliased to a different command entirely
     # or with options that dirty the search results and preview output
     set -f ps_cmd (command -v ps || echo "ps")
@@ -9,7 +9,7 @@ function _fzf_search_processes --description "Search all running processes. Repl
         $ps_cmd -A -opid,command | \
         _fzf_wrapper --multi \
                     --prompt="[Processes] ❯" \
-                    --query (commandline --current-token) \
+                    --query=(commandline --current-token) \
                     --ansi \
                     # first line outputted by ps is a header, so we need to mark it as so
                     --header-lines=1 \
