@@ -15,7 +15,7 @@ fzf_configure_bindings --directory=ctrl-a --git-log=ctrl-b --git-status=ctrl-c -
 @test "can override the default binding for history" (binding_contains_func ctrl-d _fzf_search_history) $status -eq 0
 @test "can override the default binding for variables" (binding_contains_func ctrl-e $_fzf_search_vars_command) $status -eq 0
 
-bind --mode insert ctrl-a >/dev/null && bind --mode insert ctrl-e >/dev/null
+bind --mode=insert ctrl-a >/dev/null && bind --mode=insert ctrl-e >/dev/null
 @test "installs bindings for insert mode" $status -eq 0
 
 _fzf_uninstall_bindings
