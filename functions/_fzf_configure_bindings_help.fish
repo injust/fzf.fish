@@ -1,4 +1,4 @@
-function _fzf_configure_bindings_help --description "Prints the help message for fzf_configure_bindings."
+function _fzf_configure_bindings_help --description="Prints the help message for fzf_configure_bindings."
     echo "\
 USAGE:
     fzf_configure_bindings [--COMMAND=[KEY_SEQUENCE]...]
