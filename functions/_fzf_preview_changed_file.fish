@@ -3,7 +3,7 @@
 # MM functions/_fzf_preview_changed_file.fish
 #  D README.md
 # R  LICENSE -> "New License"
-function _fzf_preview_changed_file --argument-names path_status --description="Show the git diff of the given file."
+function _fzf_preview_changed_file --description="Show the git diff of the given file." --argument-names path_status
     # remove quotes because they'll be interpreted literally by git diff
     # no need to requote when referencing $path because fish does not perform word splitting
     # https://fishshell.com/docs/current/fish_for_bash_users.html
