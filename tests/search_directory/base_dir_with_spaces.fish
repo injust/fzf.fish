@@ -1,5 +1,5 @@
 mock commandline --current-token "echo tests/_resources/multi word dir/"
-mock commandline "--current-token --replace --" "echo \$argv"
+mock commandline "--current-token --" "echo \$argv"
 mock commandline \* ""
 set -xa FZF_DEFAULT_OPTS "--filter=''" # automatically select all input lines sent to fzf
 

@@ -3,7 +3,7 @@ set temp_dir temp_test_99
 
 # escape tilde so it doesn't get expanded when echoed
 mock commandline --current-token "echo \~/$temp_dir/"
-mock commandline "--current-token --replace --" "string split ' ' \$argv"
+mock commandline "--current-token --" "string split ' ' \$argv"
 mock commandline \* ""
 
 mkdir ~/$temp_dir

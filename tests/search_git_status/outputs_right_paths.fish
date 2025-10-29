@@ -1,7 +1,7 @@
 set files "filename_with_*.txt" "filename with space.csv" tests/_resources/nestedfilename
 touch $files
 mock commandline \* ""
-mock commandline "--current-token --replace --" "echo \$argv"
+mock commandline "--current-token --" "echo \$argv"
 set -xa FZF_DEFAULT_OPTS "--filter='filename'"
 
 set actual (_fzf_search_git_status)

@@ -25,7 +25,7 @@ function _fzf_search_directory --description="Search the current directory. Repl
     end
 
     if test $status -eq 0
-        commandline --current-token --replace -- (string escape -- $file_paths_selected | string join ' ')
+        commandline --current-token -- (string escape -- $file_paths_selected | string join ' ')
     end
 
     commandline --function repaint

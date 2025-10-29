@@ -32,7 +32,7 @@ function _fzf_search_history --description="Search command history. Replace the 
     )
 
     if test $status -eq 0
-        commandline --replace -- $commands_selected
+        commandline -- $commands_selected
     end
 
     commandline --function repaint

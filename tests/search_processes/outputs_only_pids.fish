@@ -1,6 +1,6 @@
 # test pid extraction from fzf multi-line output
 mock commandline \* ""
-mock commandline "--current-token --replace --" "echo \$argv"
+mock commandline "--current-token --" "echo \$argv"
 set -xa FZF_DEFAULT_OPTS "--filter=''" # automatically select all input lines sent to fzf
 
 # string split output so that each pid is an array rather than a long string

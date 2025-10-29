@@ -15,12 +15,12 @@ printf "%s" "- cmd: z fzf
 - cmd: cd ~/.local/share/fish/
   when: 1612201487" >$history_file_path
 
-mock commandline "--replace --" "echo \$argv"
+mock commandline -- "echo \$argv"
 mock commandline \* ""
 set -xa FZF_DEFAULT_OPTS "--filter=function"
 
 set actual (_fzf_search_history)
-# for some reason, \n doesn't appear in what is passed to commandline --replace --
+# for some reason, \n doesn't appear in what is passed to commandline --
 set expected "function select_me echo I\'m just testing end"
 @test "outputs right command" "$actual" = "$expected"
 

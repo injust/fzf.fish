@@ -3,7 +3,7 @@ set history_file_path ~/.local/share/fish/test_history
 printf "%s" "- cmd: echo 'lots of │ chars
   when: 1612201487" >$history_file_path
 
-mock commandline "--replace --" "echo \$argv"
+mock commandline -- "echo \$argv"
 mock commandline \* ""
 set -xa FZF_DEFAULT_OPTS --select-1
 

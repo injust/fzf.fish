@@ -12,12 +12,12 @@ printf "%s" "- cmd: z fzf
   when: 1612201479
 - cmd: cd ~/.local/share/fish/
   when: 1612201487" >$history_file_path
-mock commandline "--replace --" "printf %s\n \$argv"
+mock commandline -- "printf %s\n \$argv"
 mock commandline \* ""
 set -xa FZF_DEFAULT_OPTS "--filter=git"
 
 set actual (_fzf_search_history)
-# for some reason, \n don't appear in what is passed to commandline --replace --, and it's in reverse order
+# for some reason, \n don't appear in what is passed to commandline --, and it's in reverse order
 set expected "git pull git status git log"
 @test "outputs selected commands without timestamps" "$actual" = "$expected"
 
