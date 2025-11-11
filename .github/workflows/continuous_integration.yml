@@ -47,7 +47,7 @@ jobs:
 
       - uses: fish-actions/syntax-check@v1
 
-  # check Fish format
+  # check fish format
   format-check:
     runs-on: ubuntu-latest
 
