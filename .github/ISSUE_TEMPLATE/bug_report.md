@@ -23,7 +23,7 @@ If applicable, include screenshots here.
 
 Versions installed:
 
-- Fish: [e.g. 3.3.1, check using `$version` instead of `fish --version`]
+- fish: [e.g. 3.3.1, check using `$version` instead of `fish --version`]
 - fzf.fish: [e.g. 7.0, [how to check this](https://github.com/PatrickF1/fzf.fish/wiki/Cookbook#how-can-i-check-which-version-of-fzffish-im-on)]
 - terminal: [e.g. iTerm]
 - OS: [e.g. macOS 11.4]

@@ -8,7 +8,7 @@
 
 </div>
 
-Augment your [Fish][] command line with mnemonic key bindings to efficiently find what you need using [fzf][].
+Augment your [fish][] command line with mnemonic key bindings to efficiently find what you need using [fzf][].
 
 https://user-images.githubusercontent.com/1967248/197308919-51d04602-2d5f-46aa-a96e-6cf1617e3067.mov
 
@@ -51,10 +51,10 @@ Use `fzf.fish` to interactively find and insert file paths, git commit hashes, a
 
 ![Search History example](https://github.com/PatrickF1/fzf.fish/blob/assets/history.png)
 
-- **Fzf input:** Fish's command history
+- **Fzf input:** fish's command history
 - **Output:** selected commands
 - **Key binding and mnemonic:** <kbd>Ctrl</kbd>+<kbd>R</kbd> (`R` for reverse-i-search)
-- **Preview window:** the entire command with Fish syntax highlighting
+- **Preview window:** the entire command with fish syntax highlighting
 
 ### 🖥️ Search Processes
 
@@ -198,7 +198,7 @@ Do not include the vertical box-drawing character `│` (not to be confused with
 
 Find answers to these questions and more in the [project Wiki](https://github.com/PatrickF1/fzf.fish/wiki):
 
-- How does `fzf.fish` [compare](https://github.com/PatrickF1/fzf.fish/wiki/Prior-Art) to other popular fzf plugins for Fish?
+- How does `fzf.fish` [compare](https://github.com/PatrickF1/fzf.fish/wiki/Prior-Art) to other popular fzf plugins for fish?
 - Why isn't this [command working](https://github.com/PatrickF1/fzf.fish/wiki/Troubleshooting)?
 - How can I [customize](https://github.com/PatrickF1/fzf.fish/wiki/Cookbook) this command?
 - How can I [contribute](https://github.com/PatrickF1/fzf.fish/wiki/Contributing) to this plugin?
