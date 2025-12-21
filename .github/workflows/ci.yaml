@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install fish shell
+        uses: fish-shop/install-fish-shell@v2
+
+      - name: Indent check
+        uses: fish-shop/indent-check@v2
+
+      - name: Syntax check
+        uses: fish-shop/syntax-check@v2
+
+  prettier:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Check formatting
+        uses: creyD/prettier_action@v4.6
+        with:
+          prettier_options: --check .
+
+  test:
+    needs: [lint, prettier]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install fish shell
+        uses: fish-shop/install-fish-shell@v2
+
+      - name: Install fish plugins
+        uses: fish-shop/install-plugin@v2
+        with:
+          plugin-manager: fisher
+          plugins: IlanCosman/clownfish jorgebucaran/fishtape ${{ github.workspace }}
+
+      - name: Install dependencies
+        uses: ConorMacBride/install-package@v1
+        with:
+          apt: fd-find fzf
+          brew: fd fzf
+
+      - name: Run Fishtape tests
+        uses: fish-shop/run-fishtape-tests@v2
