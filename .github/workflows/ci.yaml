@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install fish shell
+        uses: fish-shop/install-fish-shell@v2
+
+      - name: Indent check
+        uses: fish-shop/indent-check@v2
+
+      - name: Syntax check
+        uses: fish-shop/syntax-check@v2
+
+  prettier:
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Check formatting
+        uses: creyD/prettier_action@v4.6
+        with:
+          prettier_options: --check .
+
+  test:
+    needs: [lint, prettier]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install fish shell
+        uses: fish-shop/install-fish-shell@v2
+
+      - name: Install fish plugins
+        uses: fish-shop/install-plugin@v2
+        with:
+          plugin-manager: fisher
+          plugins: IlanCosman/clownfish ${{ github.workspace }}
+
+      - name: Install dependencies
+        env:
+          HOMEBREW_NO_ANALYTICS: 1
+          HOMEBREW_NO_AUTO_UPDATE: 1
+          HOMEBREW_NO_ENV_HINTS: 1
+          HOMEBREW_NO_INSTALL_CLEANUP: 1
+        run: |
+          if [[ $RUNNER_OS == Linux ]]; then
+              eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+              echo "$(brew --prefix)/bin" >>"$GITHUB_PATH"
+          fi
+          brew install fd fzf
+
+      - name: Run Fishtape tests
+        uses: fish-shop/run-fishtape-tests@v2
