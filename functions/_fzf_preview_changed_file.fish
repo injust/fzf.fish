@@ -15,7 +15,7 @@ function _fzf_preview_changed_file --description="Show the git diff of the given
 
     set -f diff_opts --color=always
 
-    if test $index_status = '?'
+    if test $index_status = ?
         _fzf_report_diff_type Untracked
         _fzf_preview_file $path
     else if contains {$index_status}$working_tree_status DD AU UD UA DU AA UU
