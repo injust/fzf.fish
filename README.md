@@ -176,10 +176,10 @@ The format must be one line per commit and the hash must be the first field, or 
 
 ### Integrate with a diff highlighter
 
-To pipe the git diff previews from [Search Git Log][] and [Search Git Status][] through a highlighter tool (e.g. [delta](https://github.com/dandavison/delta) or [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)), set a command invoking the highlighter in `fzf_diff_highlighter`. It should not pipe its output to a pager:
+To pipe the git diff previews from [Search Git Log][] and [Search Git Status][] through a highlighter tool (e.g. [delta](https://github.com/dandavison/delta) or [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)), set a command invoking the highlighter in `fzf_diff_highlighter`:
 
 ```fish
-set fzf_diff_highlighter delta --paging=never --width=\$FZF_PREVIEW_COLUMNS
+set fzf_diff_highlighter delta --width=\$FZF_PREVIEW_COLUMNS
 # Or, if using DFS
 set fzf_diff_highlighter diff-so-fancy
 ```
