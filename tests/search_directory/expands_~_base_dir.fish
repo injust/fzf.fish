@@ -9,5 +9,5 @@ mock commandline \* ""
 mkdir ~/$temp_dir
 touch ~/$temp_dir/{1, 2, 3, 4, 5, 6, 7}
 set result (_fzf_search_directory)
-@test "~ is expanded to HOME" (count $result) = 7
+@test "~ is expanded to HOME" (count $result) -eq 7
 rm -rf ~/$temp_dir
