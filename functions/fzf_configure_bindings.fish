@@ -9,7 +9,7 @@ function fzf_configure_bindings --description="Installs the default key bindings
     if test $status -ne 0
         echo "Invalid option or a positional argument was provided." >&2
         _fzf_configure_bindings_help
-        return 22
+        return 22 # means "invalid argument" in POSIX
     else if set -q _flag_help
         _fzf_configure_bindings_help
         return
