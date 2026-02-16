@@ -6,7 +6,7 @@ function _fzf_search_variables --description="Search and preview shell variables
         printf '%s\n' '_fzf_search_variables requires 2 arguments.' >&2
 
         commandline --function repaint
-        return 22 # 22 means invalid argument in POSIX
+        return 22 # means "invalid argument" in POSIX
     end
 
     # Exclude the history variable from being piped into fzf because
