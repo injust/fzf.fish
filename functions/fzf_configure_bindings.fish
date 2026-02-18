@@ -17,12 +17,12 @@ function fzf_configure_bindings --description="Installs the default key bindings
         # Initialize with default key sequences and then override or disable them based on flags
         # index 1 = directory, 2 = git_log, 3 = git_status, 4 = history, 5 = processes, 6 = variables
         set -f key_sequences ctrl-alt-f ctrl-alt-l ctrl-alt-s ctrl-r ctrl-alt-p ctrl-v
-        set -q _flag_directory && set key_sequences[1] "$_flag_directory"
-        set -q _flag_git_log && set key_sequences[2] "$_flag_git_log"
-        set -q _flag_git_status && set key_sequences[3] "$_flag_git_status"
-        set -q _flag_history && set key_sequences[4] "$_flag_history"
-        set -q _flag_processes && set key_sequences[5] "$_flag_processes"
-        set -q _flag_variables && set key_sequences[6] "$_flag_variables"
+        set -q _flag_directory; and set key_sequences[1] "$_flag_directory"
+        set -q _flag_git_log; and set key_sequences[2] "$_flag_git_log"
+        set -q _flag_git_status; and set key_sequences[3] "$_flag_git_status"
+        set -q _flag_history; and set key_sequences[4] "$_flag_history"
+        set -q _flag_processes; and set key_sequences[5] "$_flag_processes"
+        set -q _flag_variables; and set key_sequences[6] "$_flag_variables"
 
         # If fzf bindings already exists, uninstall it first for a clean slate
         if functions -q _fzf_uninstall_bindings
@@ -30,12 +30,12 @@ function fzf_configure_bindings --description="Installs the default key bindings
         end
 
         for mode in default insert
-            test -n $key_sequences[1] && bind --mode=$mode $key_sequences[1] _fzf_search_directory
-            test -n $key_sequences[2] && bind --mode=$mode $key_sequences[2] _fzf_search_git_log
-            test -n $key_sequences[3] && bind --mode=$mode $key_sequences[3] _fzf_search_git_status
-            test -n $key_sequences[4] && bind --mode=$mode $key_sequences[4] _fzf_search_history
-            test -n $key_sequences[5] && bind --mode=$mode $key_sequences[5] _fzf_search_processes
-            test -n $key_sequences[6] && bind --mode=$mode $key_sequences[6] "$_fzf_search_vars_command"
+            test -n $key_sequences[1]; and bind --mode=$mode $key_sequences[1] _fzf_search_directory
+            test -n $key_sequences[2]; and bind --mode=$mode $key_sequences[2] _fzf_search_git_log
+            test -n $key_sequences[3]; and bind --mode=$mode $key_sequences[3] _fzf_search_git_status
+            test -n $key_sequences[4]; and bind --mode=$mode $key_sequences[4] _fzf_search_history
+            test -n $key_sequences[5]; and bind --mode=$mode $key_sequences[5] _fzf_search_processes
+            test -n $key_sequences[6]; and bind --mode=$mode $key_sequences[6] "$_fzf_search_vars_command"
         end
 
         function _fzf_uninstall_bindings --inherit-variable=key_sequences
