@@ -2,8 +2,8 @@
 
 # fzf.fish 🔍🐟
 
-[![latest release badge][]](https://github.com/patrickf1/fzf.fish/releases)
-[![build status badge][]](https://github.com/patrickf1/fzf.fish/actions)
+[![latest release badge][]](https://github.com/PatrickF1/fzf.fish/releases)
+[![build status badge][]](https://github.com/PatrickF1/fzf.fish/actions)
 [![awesome badge][]](https://git.io/awsm.fish)
 
 </div>
@@ -211,7 +211,7 @@ Find answers to these questions and more in the [project Wiki](https://github.co
 [fish]: https://fishshell.com
 [fisher]: https://github.com/jorgebucaran/fisher
 [fzf]: https://github.com/junegunn/fzf
-[latest release badge]: https://img.shields.io/github/v/release/patrickf1/fzf.fish
+[latest release badge]: https://img.shields.io/github/v/release/PatrickF1/fzf.fish
 [search directory]: #-search-directory
 [search git log]: #-search-git-log
 [search git status]: #-search-git-status
