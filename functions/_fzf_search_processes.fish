@@ -21,10 +21,8 @@ function _fzf_search_processes --description="Search all running processes. Repl
 
     if test $status -eq 0
         for process in $processes_selected
-            set -fa pids_selected (string split --no-empty --fields=1 -- " " $process)
+            set -fa pids_selected (string split --fields=1 -- " " $process)
         end
-
-        # string join to replace the newlines outputted by string split with spaces
         commandline --current-token --replace -- (string join ' ' $pids_selected)
     end
 
