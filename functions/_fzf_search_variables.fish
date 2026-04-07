@@ -32,7 +32,7 @@ function _fzf_search_variables --description="Search and preview shell variables
         # If the current token begins with a $, do not overwrite the $ when
         # replacing the current token with the selected variable.
         # Uses brace expansion to prepend $ to each variable name.
-        commandline --current-token --replace (
+        commandline --current-token --replace -- (
             if string match --quiet -- '$*' $current_token
                 string join " " \${$variable_names_selected}
             else
