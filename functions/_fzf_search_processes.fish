@@ -1,7 +1,7 @@
 function _fzf_search_processes --description="Search all running processes. Replace the current token with the pid of the selected process."
     # Directly use ps command because it is often aliased to a different command entirely
     # or with options that dirty the search results and preview output
-    set -f ps_cmd (command -v ps; or echo "ps")
+    set -f ps_cmd (command -s ps; or echo "ps")
     # use all caps to be consistent with ps default format
     # snake_case because ps doesn't seem to allow spaces in the field names
     set -f ps_preview_fmt (string join ',' 'pid' 'ppid=PARENT' 'user' '%cpu' 'rss=RSS_IN_KB' 'start=START_TIME' 'command')
