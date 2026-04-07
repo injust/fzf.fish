@@ -14,7 +14,7 @@ function _fzf_search_git_log --description="Search the output of git log and pre
         set preview_cmd "$preview_cmd | $fzf_diff_highlighter"
     end
 
-    set -f selected_log_lines (
+    set -f selected_commits (
         git log --no-show-signature --color=always --format=format:$fzf_git_log_format --date=short |
         _fzf_wrapper --ansi \
             --multi \
@@ -22,11 +22,11 @@ function _fzf_search_git_log --description="Search the output of git log and pre
             --prompt="[Git Log] ❯" \
             --preview=$preview_cmd \
             --query=(commandline --current-token) \
+            --accept-nth=1 \
             $fzf_git_log_opts
     )
     if test $status -eq 0
-        for line in $selected_log_lines
-            set -f commit_hash (string split --fields=1 " " $line)
+        for commit_hash in $selected_commits
             # Expand abbreviated commit hash unless Git's `log.abbrevCommit` is true
             git config get --type=bool log.abbrevCommit | string match -q --entire true
             or set commit_hash (git rev-parse $commit_hash)
