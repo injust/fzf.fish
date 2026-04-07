@@ -1,5 +1,5 @@
 # This test has two versions: one for CI and one for local
-mock commandline "--current-token --replace" "echo \$argv"
+mock commandline "--current-token --replace --" "echo \$argv"
 mock commandline \* ""
 if git cat-file -e c6326dbda6b1f48ecbd015838073213be3bf6ec1 2>/dev/null # sha is a random commit that CI wouldn't pull
     # This test is running locally.
