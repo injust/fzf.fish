@@ -21,7 +21,7 @@ jobs:
         uses: fish-shop/indent-check@v2
 
       - name: Syntax check
-        uses: fish-shop/syntax-check@v2
+        uses: fish-shop/syntax-check@v2.2.100
 
   prettier:
     runs-on: ubuntu-latest
