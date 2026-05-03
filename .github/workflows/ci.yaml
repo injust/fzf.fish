@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install fish shell
-        uses: fish-shop/install-fish-shell@v2
+        uses: fish-shop/install-fish-shell@v2.1.11
 
       - name: Indent check
         uses: fish-shop/indent-check@v2
@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install fish shell
-        uses: fish-shop/install-fish-shell@v2
+        uses: fish-shop/install-fish-shell@v2.1.11
 
       - name: Install fish plugins
         uses: fish-shop/install-plugin@v2
