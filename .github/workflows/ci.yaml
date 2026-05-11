@@ -62,4 +62,4 @@ jobs:
           brew: fd fzf
 
       - name: Run Fishtape tests
-        uses: fish-shop/run-fishtape-tests@v2.3.104
+        uses: fish-shop/run-fishtape-tests@v2.3.105
