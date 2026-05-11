@@ -18,7 +18,7 @@ jobs:
         uses: fish-shop/install-fish-shell@v2.1.11
 
       - name: Indent check
-        uses: fish-shop/indent-check@v2.2.102
+        uses: fish-shop/indent-check@v2.2.103
 
       - name: Syntax check
         uses: fish-shop/syntax-check@v2.2.100
