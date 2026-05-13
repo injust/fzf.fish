@@ -6,7 +6,7 @@ function _fzf_search_git_log --description="Search the output of git log and pre
 
     if not set -q fzf_git_log_format
         # %h gives you the abbreviated commit hash, which is useful for saving screen space, but we will have to expand it later below
-        set -f fzf_git_log_format '%C(bold blue)%h%C(reset) - %C(cyan)%ad%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)  %C(dim normal)[%an]%C(reset)'
+        set -f fzf_git_log_format '%C(auto)%h %C(blue)%ad %C(auto)%d %s  %C(dim)[%an]%C(reset)'
     end
 
     set -f preview_cmd 'git show --color=always --stat --patch {1}'
