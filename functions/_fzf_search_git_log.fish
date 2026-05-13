@@ -5,7 +5,7 @@ function _fzf_search_git_log --description="Search the output of git log and pre
     end
 
     if not set -q fzf_git_log_format
-        # %h gives you the abbreviated commit hash, which is useful for saving screen space, but we will have to expand it later below
+        # %h gives you the abbreviated commit hash, which is useful for saving screen space, but we might need to expand it later
         set -f fzf_git_log_format '%C(auto)%h %C(blue)%ad %C(auto)%d %s  %C(dim)[%an]%C(reset)'
     end
 
@@ -26,9 +26,11 @@ function _fzf_search_git_log --description="Search the output of git log and pre
     )
     if test $status -eq 0
         for line in $selected_log_lines
-            set -f abbreviated_commit_hash (string split --fields=1 " " $line)
-            set -f full_commit_hash (git rev-parse $abbreviated_commit_hash)
-            set -fa commit_hashes $full_commit_hash
+            set -f commit_hash (string split --fields=1 " " $line)
+            # Expand abbreviated commit hash unless Git's `log.abbrevCommit` is true
+            git config get --type=bool log.abbrevCommit | string match -q --entire true
+            or set commit_hash (git rev-parse $commit_hash)
+            set -fa commit_hashes $commit_hash
         end
         commandline --current-token --replace -- (string join ' ' $commit_hashes)
     end
