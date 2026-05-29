@@ -15,13 +15,13 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install fish shell
-        uses: fish-shop/install-fish-shell@v2.1.15
+        uses: fish-shop/install-fish-shell@v2.1.16
 
       - name: Indent check
-        uses: fish-shop/indent-check@v2.2.106
+        uses: fish-shop/indent-check@v2.2.107
 
       - name: Syntax check
-        uses: fish-shop/syntax-check@v2.2.104
+        uses: fish-shop/syntax-check@v2.2.105
 
   prettier:
     runs-on: ubuntu-slim
@@ -47,10 +47,10 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install fish shell
-        uses: fish-shop/install-fish-shell@v2.1.15
+        uses: fish-shop/install-fish-shell@v2.1.16
 
       - name: Install fish plugins
-        uses: fish-shop/install-plugin@v2.3.108
+        uses: fish-shop/install-plugin@v2.3.109
         with:
           plugin-manager: fisher
           plugins: IlanCosman/clownfish jorgebucaran/fishtape ${{ github.workspace }}
@@ -69,4 +69,4 @@ jobs:
           brew install fd fzf
 
       - name: Run Fishtape tests
-        uses: fish-shop/run-fishtape-tests@v2.3.108
+        uses: fish-shop/run-fishtape-tests@v2.3.109
