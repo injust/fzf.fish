@@ -7,4 +7,4 @@ mock commandline \* ""
 # string unescape because the args passed into commandline --current-token --replace are escaped
 set actual (string unescape (_fzf_search_directory))
 
-@test "expands variables in current token" (basename $actual) = $target
+@test "expands variables in current token" (path basename $actual) = $target
