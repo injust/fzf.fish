@@ -8,5 +8,5 @@ set pids (_fzf_search_processes | string split)
 
 # test that only valid numbers are outputted (i.e. nothing else polluting the output of pids)
 # this string match command will return 0 if a single non-digit character exists in the output, otherwise 1
-string match -rq '\D' (string split $pids)
+string split $pids | string match -rq '\D'
 @test "outputs only pids" $status -eq 1
