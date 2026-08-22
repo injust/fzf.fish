@@ -1,5 +1,5 @@
 function binding_contains_func --argument-names sequence function_
-    string match --entire $function_ (bind $sequence) >/dev/null
+    bind $sequence | string match --entire $function_ >/dev/null
 end
 
 @test "default binding for directory works" (binding_contains_func ctrl-alt-f _fzf_search_directory) $status -eq 0
