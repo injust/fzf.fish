@@ -35,7 +35,7 @@ function fzf_configure_bindings --description="Installs the default key bindings
             test -n $key_sequences[3]; and bind --mode=$mode $key_sequences[3] _fzf_search_git_status
             test -n $key_sequences[4]; and bind --mode=$mode $key_sequences[4] _fzf_search_history
             test -n $key_sequences[5]; and bind --mode=$mode $key_sequences[5] _fzf_search_processes
-            test -n $key_sequences[6]; and bind --mode=$mode $key_sequences[6] "$_fzf_search_vars_command"
+            test -n $key_sequences[6]; and bind --mode=$mode $key_sequences[6] $_fzf_search_vars_command
         end
 
         function _fzf_uninstall_bindings --inherit-variable=key_sequences
